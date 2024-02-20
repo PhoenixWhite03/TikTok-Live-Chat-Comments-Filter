@@ -1,0 +1,92 @@
+:root {
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    font-family: SansSerif, Arial,  serif;
+
+    display: grid;
+    grid-template:
+        "nav" 30px
+        "main" auto
+        "deepl" 0 /
+        auto;
+}
+
+.nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comments-box {
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+    font-size: 1.5rem;
+    padding: 1em;
+
+    width: 50%;
+    height: 50%;
+
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+    align-items: center;
+
+    background: white;
+    box-shadow: lightgray 0 0 1em 0.1em;
+}
+
+.comment-card {
+    font-size: 0.7em;
+
+    width: 100%;
+    padding: 0.8em 1em;
+    display: grid;
+    grid-template:
+        "username" max-content
+        "comment" minmax(3em, max-content)
+        "options" minmax(2em, max-content)/
+        100%;
+    grid-gap: 0.5em;
+
+    background: white;
+    box-shadow: lightgray 0 0 1em 0.1em;
+}
+
+.username {
+    grid-area: username;
+    border-bottom: lightgray solid;
+}
+
+.comment {
+    grid-area: comment;
+}
+
+.options {
+    grid-area: options;
+    font-size: 0.8rem;
+    background: lightgray;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
